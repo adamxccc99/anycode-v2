@@ -1,0 +1,22 @@
+{
+  "_comment": "Example MCP server configs for anycode-v2. Remove _comment keys and fill in real values. Supported transports: command (stdio). GitHub uses docker (github-mcp-server); gdrive uses npx; roblox-studio points at a local community server bridge.",
+  "mcpServers": {
+    "github": {
+      "_comment": "Create a fine-grained personal access token at github.com/settings/personal-access-tokens then paste it into the env value.",
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "-e", "GITHUB_PERSONAL_ACCESS_TOKEN", "ghcr.io/github/github-mcp-server"],
+      "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "REPLACE_ME" }
+    },
+    "gdrive": {
+      "_comment": "Requires OAuth credentials per @modelcontextprotocol/server-gdrive docs (GDRIVE_* env).",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-gdrive"]
+    },
+    "roblox-studio": {
+      "_comment": "Community Roblox Studio MCP bridges pair a Studio plugin with a local server process; point args at that bridge's entrypoint.",
+      "command": "node",
+      "args": ["/path/to/roblox-studio-mcp/server.js"]
+    }
+  },
+  "disabledTools": {}
+}
