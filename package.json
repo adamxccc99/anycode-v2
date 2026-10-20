@@ -1,0 +1,23 @@
+{
+  "name": "anycode-v2",
+  "version": "0.2.0",
+  "description": "Agentic coding CLI (any-code v2) with MCP server connectivity (GitHub, Google Drive, Roblox Studio, or anything speaking MCP) and a skills system.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "bin": {
+    "anycode": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/cli.js",
+    "test": "node --experimental-strip-types --no-warnings --test test/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}
